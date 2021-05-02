@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+       /*
+        var obj = {"key":"value","numero":1};//las llaves indican que es un json
+
+        var letras[] = ["a","b","c"];
+        for(var i=0; i<letras.lenght;i++)
+        {
+
+        }*/
+
+        //obj.key = "clave";
+        //alert(obj.key);
+        //alert(obj.numero);
+        //alert(obj["key"]);
+
+
+        
+        
+        var peticionHttp = new XMLHttpRequest();
+
+        peticionHttp.onreadystatechange = function(){
+            console.log("Llego la respuesta",peticionHttp.readyState,peticionHttp.status);
+            if(peticionHttp.readyState == 4 && peticionHttp.status == 200)
+            {
+                console.log(peticionHttp.responseText);
+            }};
+            peticionHttp.open("POST","http://localhost:3000/nuevaPersona",true);
+            peticionHttp.setRequestHeader("Content-type","application/json");
+            var personaJson = {nombre:"matias",apellido:"ramos",telefono:"551212",fecha:"1988-25-2"};
+            var stringPersona = JSON.stringify(personaJson);
+            peticionHttp.send(stringPersona);
+            /*hacer cuando se cargue la pag que se cargue la lista de las personas que estan aca en el programa de la clase pasada*/
+
+        function ejecutarGet()
+        {
+            peticionHttp.onreadystatechange = function(){
+            console.log("Llego la respuesta",peticionHttp.readyState,peticionHttp.status);
+            if(peticionHttp.readyState == 4 && peticionHttp.status == 200)
+            {
+               // console.log(peticionHttp.responseText);
+                var listaPersonas = JSON.parse(peticionHttp.responseText);//convierte la respuesta en json
+                for(var i=0;i<listaPersonas.length;i++)
+                {
+                    console.log(listaPersonas[i].nombre,listaPersonas[i].apellido);
+                }
+                
+
+            }
+            peticionHttp.open("GET","http://localhost:3000/personas",true);
+            //peticionHttp.setRequestHeader("key","value");//cuando se setea algo en el heat
+            peticionHttp.send();//adentro de los () se coloca lo que se va a enviar
+        }
+        }
+        //node .\index.js   para abrir en node js    in+tab
+        //peticionHttp.open("GET","https://607eee2c02a23c0017e8c685.mockapi.io/users",true);
+        
+        
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

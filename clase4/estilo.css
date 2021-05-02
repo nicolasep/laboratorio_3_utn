@@ -1,0 +1,60 @@
+.contenedor {
+  background-color: cadetblue;
+  width: 50%;
+  height: 25%;
+  border-radius: 4px;
+  box-shadow: 36px 13px 59px 0px rgba(22, 2, 2.58);
+}
+
+input[type="text"] {
+  width: 100%;
+  margin: 8px;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px 20px;
+}
+
+label {
+  margin: 4px 4px;
+}
+input[type="button"] {
+  width: 100px;
+  background-color: rgb(7, 248, 59);
+  padding: 14px 20px;
+  margin: 8px 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 5px 5px 2px 0px rgb(12, 95, 3);
+}
+/*
+.btn {
+  width: 50px;
+  background-color: rosybrown;
+  padding: 14px 20px;
+  margin: 8px 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}*/
+table {
+  margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  background-color: royalblue;
+  color: seashell;
+  padding: 8px;
+  text-align: left;
+}
+td {
+  padding: 8px;
+}
+.conError {
+  border: 2px solid red;
+}
+.sinError {
+  border: 2px solid rgb(17, 9, 9);
+}
