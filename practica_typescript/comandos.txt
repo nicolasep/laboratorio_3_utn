@@ -1,0 +1,9 @@
+tsc --init    crea el archivo config .json ahi se puede configurar que compile todo la carpeta
+tsc -p ./    compilamos toda la carpeta
+
+tsc -t es6 nombreArchivo.ts      compilar el archivo en version 6
+
+tsc --w .\nombreArchivo.ts   usamos el watch para que compile de forma automatica cuando se modifique el archivo
+
+node .\nombreArchivo.js   para ejecutar
+
