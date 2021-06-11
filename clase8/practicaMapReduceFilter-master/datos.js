@@ -1012,9 +1012,9 @@ var datos =[
   // de todos los usuarios mayores que '25'
   lib.userOlderThan = function () {
 
-    //ver, esta mal
-    return datos.filter(item=>item.age>25).map(item=>item.name)+datos.filter(item=>item.age>25).map(item=>item.email)+
-    datos.filter(item=>item.age>25).map(item=>item.age);
+    return datos.map(item=>{
+      return {name:item.name,email:item.email,age:item.age};
+    }).filter(item=>item.age>25);
 
   };
 
@@ -1053,18 +1053,38 @@ var datos =[
 
   // Retornar el promedio de edad de los usuarios (number)
   lib.userAgeAverage = function () {
-  
+
+    var resultado = datos.reduce((total,item)=>{
+      
+      return total += item.age;
+    },0);
+    return resultado/datos.length;
   };
 
   // Retornar el promedio de edad de los usuarios hombres (number)
   lib.userMaleAgeAverage = function () {
-    
+
+  var contador = 0;
+
+  var resultado2 = datos.filter(item=>item.gender==="male").reduce((total,item)=>{
+    contador++;
+    return total += item.age;
+
+  },0);
+  return resultado2/contador;
   
   };
 
   // Retornar el promedio de edad de los usuarios mujeres (number)
   lib.userFemaleAgeAverage = function () {
-  
+    var contador = 0;
+
+    var resultado2 = datos.filter(item=>item.gender==="female").reduce((total,item)=>{
+      contador++;
+      return total += item.age;
+
+    },0);
+    return resultado2/contador;
   };
 
   // Retornar un objeto  de etiquetas (tags)
