@@ -7,4 +7,10 @@ tsc --w .\nombreArchivo.ts   usamos el watch para que compile de forma automatic
 
 node .\nombreArchivo.js   para ejecutar
 
-npm install -g typescript 
+npm install -g typescript
+
+
+alt 96 = `
+ 
+
+npm update -g typescript
